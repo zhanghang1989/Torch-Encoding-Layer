@@ -1,0 +1,3 @@
+[submodule "experiments/fb.resnet.torch"]
+	path = experiments/fb.resnet.torch
+	url = https://github.com/facebook/fb.resnet.torch
