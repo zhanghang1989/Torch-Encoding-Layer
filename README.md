@@ -2,7 +2,7 @@
 Created by [Hang Zhang](http://hangzh.com/)
 
 ## Introduction
-This repo is a Torch implementation of Deep Encoding as described in the [paper](http://hangzh.com/) ArXiv coming soon:
+This repo is a Torch implementation of Deep Encoding as described in the ArXiv [paper](https://arxiv.org/pdf/1612.02844.pdf)
 ```
 @article{zhang2016deep,
   title={Deep TEN: Texture Encoding Network},
