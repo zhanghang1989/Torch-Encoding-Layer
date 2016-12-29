@@ -104,13 +104,13 @@ function Encoding:updateOutput(input)
 
 	if input:dim() == 2 then
 		self.output:resize(K, D)
-		libencoding.Aggregate.Forward(self.output:view(1,K,D), 
+		HZENCODING.Aggregate.Forward(self.output:view(1,K,D), 
 										self.A:view(1,N,K),
 										self.R:view(1,N,K,D))
 	elseif input:dim() == 3 then
 		local B = self.A:size(1)
 		self.output:resize(B, K, D)
-		libencoding.Aggregate.Forward(self.output, self.A, self.R)
+		HZENCODING.Aggregate.Forward(self.output, self.A, self.R)
 	end
 	return self.output
 end
@@ -129,7 +129,7 @@ function Encoding:updateGradInput(input, gradOutput)
 	if input:dim() == 2 then
 		-- d_l/d_A \in R^{NxK}
 		local N = A:size(1)
-		libencoding.Aggregate.BackwardA(self.gradA:view(1,N,K), 
+		HZENCODING.Aggregate.BackwardA(self.gradA:view(1,N,K), 
 												gradOutput:view(1,K,D), self.R:view(1,N,K,D))
 		-- d_l/d_X = d_l/d_A * d_A/d_X + d_l/d_R * d_R/d_X
 		self.gradSL2 = self.soft:updateGradInput(self.SL2, self.gradA)
@@ -141,7 +141,7 @@ function Encoding:updateGradInput(input, gradOutput)
 		local B = self.A:size(1)
 		local N = input:size(2)
 		-- d_l/d_A \in R^{NxK}
-		libencoding.Aggregate.BackwardA(self.gradA, gradOutput, self.R)
+		HZENCODING.Aggregate.BackwardA(self.gradA, gradOutput, self.R)
 		-- d_l/d_X = d_l/d_A * d_A/d_X + d_l/d_R * d_R/d_X
 		self.gradSL2 = self.soft:updateGradInput(self.SL2:view(B*N,K), 
 														self.gradA:view(B*N,K)):view(B,N,K)
@@ -163,7 +163,7 @@ function Encoding:accGradParameters(input, gradOutput, scale)
 	if input:dim() == 2 then
 		local N = input:size(1)
 		-- d_loss/d_C = d_loss/d_R * d_R/d_C + d_loss/d_A * d_A/d_C
-		libencoding.Weighting.UpdateParams(self.gradBias:view(1,K), 
+		HZENCODING.Weighting.UpdateParams(self.gradBias:view(1,K), 
 						self.gradSL2:view(1,N,K), self.L2:view(1,N,K))
 		for k = 1,self.K do
 				-- d_l/d_c 
@@ -176,16 +176,16 @@ function Encoding:accGradParameters(input, gradOutput, scale)
 		local N = input:size(2)
 		-- batch gradient of s_k
 		self.bufBias:resize(B, K)
-		libencoding.Weighting.UpdateParams(self.bufBias, self.gradSL2, self.L2)
+		HZENCODING.Weighting.UpdateParams(self.bufBias, self.gradSL2, self.L2)
 		-- average the gradient for s in the batch instead of sum, avoid overflow
 		self.gradBias:copy(scale * self.bufBias:sum(1):squeeze())
 
 		self.bufWeight:resize(B,K,D)
-		libencoding.Weighting.BatchRowScale(self.bufWeight, self.A:sum(2):squeeze(), gradOutput)
+		HZENCODING.Weighting.BatchRowScale(self.bufWeight, self.A:sum(2):squeeze(), gradOutput)
 		self.gradWeight:copy( -2*scale*	torch.bmm(
 				(self.gradSL2:view(B*N,K)*self.bias:diag()):view(B,N,K):transpose(2,3):reshape(B*K,1,N),
 				self.R:transpose(2,3):reshape(B*K,N,D)):view(B,K,D):sum(1):squeeze() 
-			-scale * self.bufWeight:mean(1):squeeze())
+			-scale * self.bufWeight:sum(1):squeeze())
 	end
 end
 

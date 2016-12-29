@@ -1,10 +1,15 @@
 # Deep Encoding
-Created by [Hang Zhang](www.hangzh.com)
+Created by [Hang Zhang](http://hangzh.com/)
 
 ## Introduction
-This repo is a Torch implementation of Deep Encoding as described in the [paper](www.hangzh.com) ArXiv coming soon:
+This repo is a Torch implementation of Deep Encoding as described in the [paper](http://hangzh.com/) ArXiv coming soon:
 ```
-bibtex will be added here
+@article{zhang2016deep,
+  title={Deep TEN: Texture Encoding Network},
+  author={Zhang, Hang and Xue, Jia and Dana, Kristin},
+  journal={arXiv preprint arXiv:1612.02844},
+  year={2016}
+}
 ```
 
 ## Install

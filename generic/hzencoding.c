@@ -49,7 +49,7 @@ static const struct luaL_Reg encoding_(Encoding) [] =
 DLL_EXPORT int luaopen_libencoding(lua_State *L) {
 	lua_newtable(L);
 	lua_pushvalue(L, -1);
-	lua_setglobal(L, "libencoding");
+	lua_setglobal(L, "HZENCODING");
 
 	lua_newtable(L);
 	luaT_setfuncs(L, encoding_(Aggregate), 0);

@@ -32,7 +32,7 @@ __global__ void HZWeighting_UpdateParams_kernel (
 	for(i=0; i<N; i++) {
 		sum += L[b][i][k].ldg() * D[b][i][k].ldg();
 	}
-	G[b][k] = sum; //isnan(sum) ? 1e-6 : sum;
+	G[b][k] = isnan(sum) ? 1e-6 : sum;
 }
 
 void HZWeighting_UpdateParams(THCState *state, THCTensor *G_, THCTensor *L_,
@@ -62,6 +62,7 @@ __global__ void HZWeighting_BatchRowWeighing_kernel (
 {
   /* declarations of the variables */
   int b, k, d;
+	real output;
   /* Get the index and channels */ 
   b = blockIdx.z;
   d = blockIdx.x * blockDim.x + threadIdx.x;
@@ -69,7 +70,8 @@ __global__ void HZWeighting_BatchRowWeighing_kernel (
 	/* boundary check for output */
 	if (k >= G.getSize(1) || d >= G.getSize(2))	return;
 	/* main operation */
-	G[b][k][d] = L[b][k][d].ldg() * W[b][k].ldg();
+	output = L[b][k][d].ldg() * W[b][k].ldg();
+	G[b][k][d] = isnan(output) ? 1e-16: output;
 }
 
 void HZWeighting_BatchRowWeighting(THCState *state, THCTensor *G_, THCTensor *W_,
