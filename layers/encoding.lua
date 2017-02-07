@@ -51,8 +51,8 @@ function Encoding:reset(stdv)
 		stdv1 = stdv * math.sqrt(3)
 		stdv2 = stdv * math.sqrt(3)
 	else
-		stdv1 = 1./math.sqrt(self.weight:size(1))
-		stdv2 = 1./math.sqrt(self.bias:size(1))
+		stdv1 = 1./math.sqrt(self.K * self.D)
+		stdv2 = 1./math.sqrt(self.K)
 	end
 	self.weight:uniform(-stdv1,stdv1)
 	self.bias:uniform(-stdv2,stdv2)
@@ -154,7 +154,7 @@ function Encoding:updateGradInput(input, gradOutput)
 end
 
 function Encoding:accGradParameters(input, gradOutput, scale)
-	scale = scale or 1
+	scale = 0.1 * scale or 0.1
 	local K = self.K
 	local D = self.D
 	self.bufBias = self.bufBias or self.bias.new()

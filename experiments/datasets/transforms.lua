@@ -1,5 +1,6 @@
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- Copyright (c) 2016, CVPR anonymous submission, all rights reserved
+-- modified from https://github.com/facebook/fb.resnet.torch
+-- original copyrights preserves
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 require 'image'

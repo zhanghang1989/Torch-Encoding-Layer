@@ -1,3 +1,5 @@
 build.luarocks/
+experiments/gen/
+experiments/untitle/
 *.DS_Store
 *.swp

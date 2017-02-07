@@ -2,7 +2,7 @@
 Created by [Hang Zhang](http://hangzh.com/)
 
 ## Introduction
-This repo is a Torch implementation of Deep Encoding as described in the ArXiv [paper](https://arxiv.org/pdf/1612.02844.pdf)
+This repo is a Torch implementation of Deep Encoding (Encoding Layer) as described in the ArXiv [paper](https://arxiv.org/pdf/1612.02844.pdf)
 ```
 @article{zhang2016deep,
   title={Deep TEN: Texture Encoding Network},
@@ -19,7 +19,7 @@ cd Deep-Encoding && luarocks make
 ```
 
 ## Experiments
-0. The Joint Encoding experiment in Sec4.2 will execute by default:
+0. The Joint Encoding experiment in Sec4.2 will execute by default. (This achieves *12.89%* percentage error on STL-10 dataset, which is ***50.2%*** relative improvement comparing to pervious state-of-the art *25.67%* of Zhao *et. al. 2015*):
 
   ```bash
   cd experiments
