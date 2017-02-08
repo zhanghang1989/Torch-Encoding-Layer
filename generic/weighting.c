@@ -45,7 +45,7 @@ static int encoding_(Main_Weighting_BatchRow)(lua_State *L)
 	/* Check number of inputs */
   if(lua_gettop(L) != 3)
     luaL_error(L,  "Encoding: Incorrect number of arguments.\n");
-	THCTensor* G_ = *(THCTensor**)luaL_checkudata(L, 3, 
+	THCTensor* G_ = *(THCTensor**)luaL_checkudata(L, 1, 
 												THC_Tensor);
 	THCTensor* W_  = *(THCTensor**)luaL_checkudata(L, 2, 
 												THC_Tensor);
