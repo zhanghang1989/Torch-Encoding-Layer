@@ -72,11 +72,11 @@ for epoch = startEpoch, opt.nEpochs do
 	 end
    local bestModel = false
    if istable(testTop1) then
-	    if testTop1[1] < bestTop1 then
+	    if testTop1[2] < bestTop1 then
       	bestModel = true
-      	bestTop1 = testTop1[1]
-      	bestTop5 = testTop5[1]
-      	print(' * Best model for set 1', bestTop1, bestTop5)
+      	bestTop1 = testTop1[2]
+      	bestTop5 = testTop5[2]
+      	print(' * Best model ', bestTop1, bestTop5)
 			end
 	 elseif testTop1< bestTop1 then
       bestModel = true
