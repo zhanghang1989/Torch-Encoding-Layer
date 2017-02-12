@@ -14,15 +14,15 @@ This repo is a Torch implementation of Deep Encoding (Encoding Layer) as describ
 
 ## Install
 ```bash
-git clone https://github.com/zhanghang1989/Deep-Encoding
-cd Deep-Encoding && luarocks make
+luarocks install https://raw.githubusercontent.com/zhanghang1989/Deep-Encoding/master/deep-encoding-scm-1.rockspec
 ```
 
 ## Experiments
 0. The Joint Encoding experiment in Sec4.2 will execute by default. (This achieves *12.89%* percentage error on STL-10 dataset, which is ***50.2%*** relative improvement comparing to pervious state-of-the art *25.67%* of Zhao *et. al. 2015*):
 
   ```bash
-  cd experiments
+	git clone https://github.com/zhanghang1989/Deep-Encoding
+	cd Deep-Encoding/experiments
   th main.lua
   ```
 0. Training Deep-TEN on MINC-2500 in Sec4.1. Please download the pre-trained
