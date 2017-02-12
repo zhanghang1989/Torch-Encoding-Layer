@@ -76,7 +76,7 @@ for epoch = startEpoch, opt.nEpochs do
       	bestModel = true
       	bestTop1 = testTop1[2]
       	bestTop5 = testTop5[2]
-      	print(' * Best model ', bestTop1, bestTop5)
+      	print(' * Best model for set 2', bestTop1, bestTop5)
 			end
 	 elseif testTop1< bestTop1 then
       bestModel = true

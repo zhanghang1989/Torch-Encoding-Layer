@@ -2,7 +2,7 @@ package = "deep-encoding"
 version = "scm-1"
 
 source = {
-		url = "git@github.com:zhanghang1989/Deep-Encoding.git",
+		url = "git://github.com/zhanghang1989/Deep-Encoding.git",
 		tag = "master"
 }
 
