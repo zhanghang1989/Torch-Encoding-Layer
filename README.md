@@ -2,7 +2,10 @@
 Created by [Hang Zhang](http://hangzh.com/)
 
 ## Introduction
-This repo is a Torch implementation of Deep Encoding (Encoding Layer) as described in the ArXiv [paper](https://arxiv.org/pdf/1612.02844.pdf)
+<div style="text-align:center"><img src ="https://raw.githubusercontent.com/zhanghang1989/Deep-Encoding/master/images/compare3.png" width="500" /></div>	
+
+This repo is a Torch implementation of Deep Encoding (Encoding Layer) as described in the [paper](https://arxiv.org/pdf/1612.02844.pdf). Traditional methods such as bag-of-words BoW (left) have a structural similarity to more recent FV-CNN methods (center). Each component is optimized in separate steps. In our approach (right) the entire pipeline is learned in an integrated manner, tuning each component for the task at hand (end-to-end texture/material/pattern recognition).
+
 ```
 @article{zhang2016deep,
   title={Deep TEN: Texture Encoding Network},
