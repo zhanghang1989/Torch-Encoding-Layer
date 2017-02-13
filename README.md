@@ -18,11 +18,11 @@ luarocks install https://raw.githubusercontent.com/zhanghang1989/Deep-Encoding/m
 ```
 
 ## Experiments
-0. The Joint Encoding experiment in Sec4.2 will execute by default. (This achieves *12.89%* percentage error on STL-10 dataset, which is ***50.2%*** relative improvement comparing to pervious state-of-the art *25.67%* of Zhao *et. al. 2015*):
+0. The Joint Encoding experiment in Sec4.2 will execute by default. (This achieves *12.89%* percentage error on STL-10 dataset, which is ***49.8%*** relative improvement comparing to pervious state-of-the art *25.67%* of Zhao *et. al. 2015*):
 
   ```bash
-	git clone https://github.com/zhanghang1989/Deep-Encoding
-	cd Deep-Encoding/experiments
+  git clone https://github.com/zhanghang1989/Deep-Encoding
+  cd Deep-Encoding/experiments
   th main.lua
   ```
 0. Training Deep-TEN on MINC-2500 in Sec4.1. Please download the pre-trained
