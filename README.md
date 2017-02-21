@@ -1,6 +1,11 @@
 # Deep Encoding
 Created by [Hang Zhang](http://hangzh.com/)
 
+### Table of Contents
+0. [Introduction](#introduction)
+0. [Install](#install)
+0. [Experiments](#experiments)
+
 ## Introduction
 This repo is a Torch implementation of Deep Encoding (Encoding Layer) as described in the [paper](https://arxiv.org/pdf/1612.02844.pdf). If you use Encoding Layer in your research, please cite our paper:
 
@@ -31,22 +36,23 @@ luarocks install https://raw.githubusercontent.com/zhanghang1989/Deep-Encoding/m
   cd Deep-Encoding/experiments
   th main.lua
   ```
-0. Training Deep-TEN on MINC-2500 in Sec4.1 using 4 GPUs. Please download the pre-trained
+0. Training Deep-TEN on MINC-2500 in Sec4.1 using 4 GPUs. 
+	0. Please download the pre-trained
 [ResNet-50](https://d2j0dndfm35trm.cloudfront.net/resnet-50.t7) Torch model 
 and the [MINC-2500](http://opensurfaces.cs.cornell.edu/static/minc/minc-2500.tar.gz) dataset to ``minc`` folder before executing the program (tested using 4 Titan X GPUs). 
 
-  ```bash
-  th main.lua -retrain resnet-50.t7 -ft true \
-  -netType encoding -nCodes 32 -dataset minc \
-  -data minc/ -nClasses 23 -batchSize 64 \
-  -nGPU 4 -multisize true
-  ```
+		```bash
+		th main.lua -retrain resnet-50.t7 -ft true \
+		-netType encoding -nCodes 32 -dataset minc \
+		-data minc/ -nClasses 23 -batchSize 64 \
+		-nGPU 4 -multisize true
+		```
 	
-0. To get comparable results using 2 GPUs, you should change the batch size and the corresponding learning rate:
+	0. To get comparable results using 2 GPUs, you should change the batch size and the corresponding learning rate:
   
-	```bash
-  th main.lua -retrain resnet-50.t7 -ft true \
-  -netType encoding -nCodes 32 -dataset minc \
-  -data minc/ -nClasses 23 -batchSize 32 \
-  -nGPU 2 -multisize true -LR 0.05\
-  ```
+		```bash
+		th main.lua -retrain resnet-50.t7 -ft true \
+		-netType encoding -nCodes 32 -dataset minc \
+		-data minc/ -nClasses 23 -batchSize 32 \
+		-nGPU 2 -multisize true -LR 0.05\
+		```
