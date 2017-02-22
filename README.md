@@ -3,7 +3,7 @@ Created by [Hang Zhang](http://hangzh.com/)
 
 ### Table of Contents
 0. [Introduction](#introduction)
-0. [Install](#install)
+0. [Installation](#installation)
 0. [Experiments](#experiments)
 
 ## Introduction
@@ -23,7 +23,7 @@ This repo is a Torch implementation of Deep Encoding (Encoding Layer) as describ
  Traditional methods such as bag-of-words BoW (left) have a structural similarity to more recent FV-CNN methods (center). Each component is optimized in separate steps. In our approach (right) the entire pipeline is learned in an integrated manner, tuning each component for the task at hand (end-to-end texture/material/pattern recognition).
 
 
-## Install
+## Installation
 ```bash
 luarocks install https://raw.githubusercontent.com/zhanghang1989/Deep-Encoding/master/deep-encoding-scm-1.rockspec
 ```
