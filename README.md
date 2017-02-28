@@ -1,13 +1,16 @@
 # Deep Encoding
 Created by [Hang Zhang](http://hangzh.com/)
 
-### Table of Contents
-0. [Introduction](#introduction)
-0. [Installation](#installation)
-0. [Experiments](#experiments)
+- Table of Contents
+	0. [Introduction](#introduction)
+	0. [Installation](#installation)
+	0. [Experiments](#experiments)
 
 ## Introduction
-This repo is a Torch implementation of Deep Encoding (Encoding Layer) as described in the [paper](https://arxiv.org/pdf/1612.02844.pdf). If you use Encoding Layer in your research, please cite our paper:
+This repo is a Torch implementation of Deep Encoding (Encoding Layer) as described in the paper:
+
+**Deep TEN: Texture Encoding Network** [[arXiv]](https://arxiv.org/pdf/1612.02844.pdf)  
+  [Hang Zhang](http://hangzh.com/), [Jia Xue](http://jiaxueweb.com/), [Kristin Dana](http://eceweb1.rutgers.edu/vision/dana.html)
 
 ```
 @article{zhang2016deep,
