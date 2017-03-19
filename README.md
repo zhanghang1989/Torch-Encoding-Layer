@@ -1,12 +1,12 @@
 # Deep Encoding
 Created by [Hang Zhang](http://hangzh.com/)
 
-- Table of Contents
-	0. [Introduction](#introduction)
-	0. [Installation](#installation)
-	0. [Experiments](#experiments)
-	0. [Benchmarks](#benchmarks)
-	0. [Acknowldgements](#acknowldgements)
+### Table of Contents
+0. [Introduction](#introduction)
+0. [Installation](#installation)
+0. [Experiments](#experiments)
+0. [Benchmarks](#benchmarks)
+0. [Acknowldgements](#acknowldgements)
 
 ## Introduction
 This repo is a Torch implementation of Deep Encoding (Encoding Layer) as described in the paper:
@@ -33,17 +33,16 @@ luarocks install https://raw.githubusercontent.com/zhanghang1989/Deep-Encoding/m
 ```
 
 ## Experiments
-0. The Joint Encoding experiment in Sec4.2 will execute by default (tested using 1 Titan X GPU). This achieves *12.89%* percentage error on STL-10 dataset, which is ***49.8%*** relative improvement comparing to pervious state-of-the art *25.67%* of Zhao *et. al. 2015*.:
-
+- The Joint Encoding experiment in Sec4.2 will execute by default (tested using 1 Titan X GPU). This achieves *12.89%* percentage error on STL-10 dataset, which is ***49.8%*** relative improvement comparing to pervious state-of-the art *25.67%* of Zhao *et. al. 2015*.:
   ```bash
   git clone https://github.com/zhanghang1989/Deep-Encoding
   cd Deep-Encoding/experiments
   th main.lua
   ```
-0. Training Deep-TEN on MINC-2500 in Sec4.1 using 4 GPUs. 
+- Training Deep-TEN on MINC-2500 in Sec4.1 using 4 GPUs. 
 	0. Please download the pre-trained
 [ResNet-50](https://d2j0dndfm35trm.cloudfront.net/resnet-50.t7) Torch model 
-and the [MINC-2500](http://opensurfaces.cs.cornell.edu/static/minc/minc-2500.tar.gz) dataset to ``minc`` folder before executing the program (tested using 4 Titan X GPUs). 
+and the [MINC-2500](http://opensurfaces.cs.cornell.edu/static/minc/minc-2500.tar.gz) dataset to ``minc`` folder before executing the program (tested using 4 Titan X GPUs).
 
 		```bash
 		th main.lua -retrain resnet-50.t7 -ft true \
