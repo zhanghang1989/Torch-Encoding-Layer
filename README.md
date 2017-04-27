@@ -28,10 +28,14 @@ This repo is a Torch implementation of Deep Encoding (Encoding Layer) as describ
 
 
 ## Installation
+On Linux
 ```bash
 luarocks install https://raw.githubusercontent.com/zhanghang1989/Deep-Encoding/master/deep-encoding-scm-1.rockspec
 ```
-
+On OSX
+```bash
+CC=clang CXX=clang++ luarocks install https://raw.githubusercontent.com/zhanghang1989/Deep-Encoding/master/deep-encoding-scm-1.rockspec
+```
 ## Experiments
 - The Joint Encoding experiment in Sec4.2 will execute by default (tested using 1 Titan X GPU). This achieves *12.89%* percentage error on STL-10 dataset, which is ***49.8%*** relative improvement comparing to pervious state-of-the art *25.67%* of Zhao *et. al. 2015*.:
   ```bash
