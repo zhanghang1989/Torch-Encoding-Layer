@@ -9,7 +9,9 @@ Created by [Hang Zhang](http://hangzh.com/)
 0. [Acknowldgements](#acknowldgements)
 
 ## Introduction
-We also provide PyTorch [implementation](https://github.com/zhanghang1989/PyTorch-Encoding)(recommanded, memory efficient). This repo is a Torch implementation of Encoding Layer as described in the paper:
+- **Please checkout our [PyTorch implementation](https://github.com/zhanghang1989/PyTorch-Encoding) (recommended, memory efficient)**. 
+
+- This repo is a Torch implementation of Encoding Layer as described in the paper:
 
 **Deep TEN: Texture Encoding Network** [[arXiv]](https://arxiv.org/pdf/1612.02844.pdf)  
   [Hang Zhang](http://hangzh.com/), [Jia Xue](http://jiaxueweb.com/), [Kristin Dana](http://eceweb1.rutgers.edu/vision/dana.html)
