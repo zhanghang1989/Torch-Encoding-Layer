@@ -9,7 +9,7 @@ Created by [Hang Zhang](http://hangzh.com/)
 0. [Acknowldgements](#acknowldgements)
 
 ## Introduction
-- **Please checkout our [PyTorch implementation](https://github.com/zhanghang1989/PyTorch-Encoding) (recommended, memory efficient)**. 
+- **Please checkout our [PyTorch implementation](http://hangzh.com/PyTorch-Encoding/experiments/texture.html) (recommended, memory efficient)**. 
 
 - This repo is a Torch implementation of Encoding Layer as described in the paper:
 
